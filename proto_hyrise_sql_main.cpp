@@ -1,3 +1,4 @@
+#include "catalog.h"
 #include "hsql/sql/Table.h"
 #include "querycompiler.h"
 #include "queryparser.h"
@@ -13,4 +14,14 @@ int main() {
   BasePlanNode* plan = queryCompiler.Compile();
   std::cout << "Plan:" << endl;
   plan->Print();
+  std::cout << "Catalog content:" << endl;
+  try {
+    Catalog& catalog = Catalog::getInstance();
+    ATable* table = catalog.GetTable("test1");
+    std::cout << table->name_ << endl;
+    std::cout << table->columns_[0] << endl;
+  } catch (avro::Exception e) {
+    std::cout << e.what();
+  }
+  return 0;
 }

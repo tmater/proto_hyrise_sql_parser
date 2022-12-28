@@ -3,6 +3,7 @@
 # Build
 
 ## Pre-requisites
+```
 mkdir -p third_party/local/lib
 mkdir -p third_party/local/include
 cd third_party
@@ -13,7 +14,14 @@ edit Makefile "INSTALL     = /usr/local" -> "INSTALL     =../local"
 make
 make install
 cp libsqlparser.a ../local/lib/
-cde ../..
+cd ../..
+```
+```
+cd third_party
+git clone git@github.com:apache/avro.git
+cd avro
+brew install boost # let's to with brew boost for now
+```
 
 ## Build steps
 ```

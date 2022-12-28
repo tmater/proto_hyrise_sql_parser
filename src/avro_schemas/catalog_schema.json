@@ -1,0 +1,36 @@
+{
+  "type": "record",
+  "name": "ACatalog",
+  "fields": [
+    {
+      "name": "tableMap_",
+      "type": {
+        "type": "map",
+        "values": {
+          "type": "record",
+          "name": "ATable",
+          "fields": [
+            {
+              "name": "name_",
+              "type": "string"
+            },
+            {
+              "name": "fileList_",
+              "type": {
+                "type": "array",
+                "items": "string"
+              }
+            },
+            {
+              "name": "columns_",
+              "type": {
+                "type": "array",
+                "items": "string"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
