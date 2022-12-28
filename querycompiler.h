@@ -3,21 +3,19 @@
 
 #pragma once
 
-#include "hsql/SQLParserResult.h"
-#include "hsql/SQLParser.h"
-
 #include "baseplannode.h"
-
+#include "hsql/SQLParser.h"
+#include "hsql/SQLParserResult.h"
 #include <vector>
 
 class QueryCompiler {
-public:
-    QueryCompiler(const hsql::SQLStatement*);
-    ~QueryCompiler();
+ public:
+  QueryCompiler(const hsql::SQLStatement*);
+  ~QueryCompiler();
 
-    BasePlanNode* Compile();
+  BasePlanNode* Compile();
 
-private:
+ private:
   const hsql::SQLStatement* stmt_;
 
   BasePlanNode* CompileSelectStatement(hsql::TableRef*);

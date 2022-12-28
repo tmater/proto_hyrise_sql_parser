@@ -11,12 +11,13 @@ using namespace std;
 using namespace hsql;
 
 class QueryParser {
- private:
  public:
   QueryParser();
   ~QueryParser();
 
   const SQLStatement* Parse(string stmt);
+
+ private:
 };
 
 #endif

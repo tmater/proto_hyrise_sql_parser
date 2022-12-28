@@ -1,11 +1,12 @@
 #include "joinplannode.h"
-
 #include <iomanip>
 
 JoinPlanNode::JoinPlanNode(BasePlanNode* leftChildPlanNode,
-  BasePlanNode* rightChildPlanNode, hsql::JoinType joinType) :
-  leftChildPlanNode_(leftChildPlanNode), rightChildPlanNode_(rightChildPlanNode), 
-  joinType_(joinType) {}
+                           BasePlanNode* rightChildPlanNode,
+                           hsql::JoinType joinType)
+    : leftChildPlanNode_(leftChildPlanNode),
+      rightChildPlanNode_(rightChildPlanNode),
+      joinType_(joinType) {}
 
 JoinPlanNode::~JoinPlanNode() {}
 

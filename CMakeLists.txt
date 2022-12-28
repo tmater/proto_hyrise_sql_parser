@@ -23,4 +23,3 @@ add_executable(proto_hyrise_sql proto_hyrise_sql_main.cpp
 )
 
 target_link_libraries(proto_hyrise_sql hyrise_sql)
-

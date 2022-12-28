@@ -1,17 +1,17 @@
-#include "hsql/sql/SelectStatement.h"
-
 #include "querycompiler.h"
-#include "scanplannode.h"
+#include "hsql/sql/SelectStatement.h"
 #include "joinplannode.h"
+#include "scanplannode.h"
 
-QueryCompiler::QueryCompiler(const hsql::SQLStatement* stmt): stmt_(stmt){}
+QueryCompiler::QueryCompiler(const hsql::SQLStatement* stmt) : stmt_(stmt) {}
 
-QueryCompiler::~QueryCompiler(){}
+QueryCompiler::~QueryCompiler() {}
 
 BasePlanNode* QueryCompiler::Compile() {
   switch (stmt_->type()) {
     case hsql::StatementType::kStmtSelect: {
-      const hsql::SelectStatement*  stmt = static_cast<const hsql::SelectStatement*>(stmt_);
+      const hsql::SelectStatement* stmt =
+          static_cast<const hsql::SelectStatement*>(stmt_);
       return CompileSelectStatement(stmt->fromTable);
     }
     default: {
@@ -24,7 +24,8 @@ BasePlanNode* QueryCompiler::Compile() {
 BasePlanNode* QueryCompiler::CompileSelectStatement(hsql::TableRef* tableRef) {
   if (tableRef->type == hsql::kTableName) {
     // Catalog& catalog = Catalog::getInstance();
-    // vector<string> fileList = catalog.GetTable(tableRef->getName())->fileList_;
+    // vector<string> fileList =
+    // catalog.GetTable(tableRef->getName())->fileList_;
     return new ScanPlanNode();
   }
   JoinPlanNode* join_node = new JoinPlanNode(

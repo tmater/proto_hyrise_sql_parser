@@ -1,0 +1,20 @@
+BasedOnStyle: Google
+
+DerivePointerAlignment: false
+PointerAlignment: Left
+
+IncludeBlocks: Merge
+IncludeCategories:
+- Regex: '^\"'
+  Priority: 1500
+- Regex: '^<.*/.*'
+  Priority: 4000
+- Regex: '^<[^/]*>'
+  Priority: 5000
+
+RawStringFormats:
+- Language: TextProto
+  Delimiters:
+  - 'pb'
+  - 'proto'
+  BasedOnStyle: Google

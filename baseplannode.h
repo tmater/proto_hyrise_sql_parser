@@ -4,12 +4,11 @@
 #pragma once
 
 class BasePlanNode {
-public:
+ public:
   virtual void Print(int depth) = 0;
   void Print();
 
-private:
-
+ private:
 };
 
 #endif

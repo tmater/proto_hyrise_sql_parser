@@ -5,21 +5,19 @@
 
 #include "baseplannode.h"
 #include "hsql/SQLParser.h"
-
 #include <iostream>
 
 class JoinPlanNode : public BasePlanNode {
-public:
-    JoinPlanNode(BasePlanNode*, BasePlanNode*, hsql::JoinType);
-    ~JoinPlanNode();
+ public:
+  JoinPlanNode(BasePlanNode*, BasePlanNode*, hsql::JoinType);
+  ~JoinPlanNode();
 
-    void Print(int depth);
+  void Print(int depth);
 
-private:
+ private:
   BasePlanNode* leftChildPlanNode_;
   BasePlanNode* rightChildPlanNode_;
   hsql::JoinType joinType_;
-
 };
 
 #endif

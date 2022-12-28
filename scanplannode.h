@@ -4,18 +4,16 @@
 #pragma once
 
 #include "baseplannode.h"
-
 #include <iostream>
 
 class ScanPlanNode : public BasePlanNode {
-public:
+ public:
   ScanPlanNode();
   ~ScanPlanNode();
 
   void Print(int depth);
 
-private:
-
+ private:
 };
 
 #endif

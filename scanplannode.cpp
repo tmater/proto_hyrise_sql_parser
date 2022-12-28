@@ -1,5 +1,4 @@
 #include "scanplannode.h"
-
 #include <iomanip>
 
 ScanPlanNode::ScanPlanNode() {}
